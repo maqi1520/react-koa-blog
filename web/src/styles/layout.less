@@ -1,0 +1,34 @@
+#__next {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.wrapper-container {
+  padding: 0 24px;
+}
+.wrapper-content {
+  overflow: hidden;
+  margin: 16px auto;
+  max-width: 1280px;
+}
+.ant-back-top {
+  bottom: 40px;
+  right: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .header-container.ant-layout-header {
+    padding: 0 12px;
+  }
+  .tags-wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .wrapper-container {
+    padding: 0 10px;
+  }
+  .wrapper-content {
+    margin: 10px auto;
+  }
+}
