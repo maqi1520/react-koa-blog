@@ -44,7 +44,7 @@ export const ArcitleItem = memo(({ item }: Props) => {
         key="tag"
         icon={<TagOutlined />}
         text={item.categories.map((v, index) => (
-          <Tag key={index} color="green">
+          <Tag key={index} color="geekblue">
             {v.name}
           </Tag>
         ))}

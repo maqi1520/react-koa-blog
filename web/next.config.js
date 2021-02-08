@@ -17,26 +17,20 @@ const rewrites = [
   },
 ]
 
-let themeVariables = {
-  '@primary-color': '#07c160',
-  '@layout-header-background': '#fff',
-  '@layout-header-height': '64px',
-  '@border-radius-base': '2px',
-}
+let themeVariables = {}
 
-if (process.env.NODE_ENV !== 'production') {
-  const lessToJS = require('less-vars-to-js')
-  themeVariables = lessToJS(
-    fs.readFileSync(
-      path.resolve(__dirname, './src/styles/antd-custom.less'),
-      'utf8'
-    )
+const lessToJS = require('less-vars-to-js')
+themeVariables = lessToJS(
+  fs.readFileSync(
+    path.resolve(__dirname, './src/styles/antd-custom.less'),
+    'utf8'
   )
-  rewrites.push({
-    source: '/api/:path*',
-    destination: `http://localhost:4000/api/:path*`,
-  })
-}
+)
+rewrites.push({
+  source: '/api/:path*',
+  destination: `http://localhost:4000/api/:path*`,
+})
+
 module.exports = withLess({
   async rewrites() {
     return rewrites

@@ -36,7 +36,18 @@ export function markdownToHtml(markdown: string) {
     const result = remark()
       .use(slug)
       .use(highlight)
-      .use(html)
+      .use(html, {
+        handlers: {
+          code: (h, node) => ({
+            type: 'element',
+            tagName: 'pre',
+            properties: {
+              className: ['custom'],
+            },
+            children: [h(node, 'code')],
+          }),
+        },
+      })
       .processSync(markdown)
     return result.toString()
   } catch (error) {
