@@ -34,7 +34,7 @@ DB_PASSWORD=12345678
 DB_NAME=blog
 ```
 
-在web/下建立`.env.local` 文件
+在web/下建立`.env` 文件
 
 写入
 
