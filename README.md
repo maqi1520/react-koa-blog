@@ -112,6 +112,7 @@ docker-compose up -d web
  * [x] 回到顶部
  * [x] 适配移动端
  * [x] docker 部署
+ * [x] API swagger 管理
  * [ ] 收藏文章
  * [ ] 自定义用户博客信息
  * [ ] React Native App

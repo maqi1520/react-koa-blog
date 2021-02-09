@@ -17,6 +17,7 @@ template.yml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+error.log
 
 # local env files
 .env
@@ -50,6 +51,6 @@ bower_components
 Thumbs.db
 
 # Ignore built ts files
-dist/**/*
+dist
 
 

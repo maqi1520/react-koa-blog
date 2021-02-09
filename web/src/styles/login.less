@@ -1,7 +1,18 @@
+@import './antd-custom.less';
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .login {
   background: url(/static/images/bg.jpg) no-repeat;
   background-size: cover;
   flex: 1;
+  animation: fadeIn 500ms ease 0s;
+
   &-form {
     position: absolute;
     left: 50%;
@@ -10,7 +21,7 @@
     h1 {
       display: inline-block;
       font-size: 40px;
-      border-bottom: 6px solid #4caf50;
+      border-bottom: 6px solid @primary-color;
       margin-bottom: 50px;
       padding: 13px 0;
     }

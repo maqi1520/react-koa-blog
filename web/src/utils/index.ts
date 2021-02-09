@@ -1,9 +1,9 @@
 export const color = [
-  'green',
+  'geekblue',
   'cyan',
   'blue',
   'magenta',
-  'geekblue',
+  'green',
   'purple',
   'volcano',
   'orange',
