@@ -14,7 +14,7 @@
 git clone git@github.com:maqi1520/react-koa-blog.git
 ```
 
-在server/下建立`.env.local` 文件
+在server/下建立`.env` 文件
 写入
 
 ```bash
