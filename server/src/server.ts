@@ -13,6 +13,8 @@ import { unprotectedRouter, swaggerRouter } from './unprotectedRoutes'
 import { protectedRouter } from './protectedRoutes'
 import { cron } from './cron'
 
+const __dev__ = process.env.NODE_ENV === "development";
+
 // create connection with database
 // note that its not active database connection
 // TypeORM creates you connection pull to uses connections from pull on your requests
@@ -24,9 +26,9 @@ createConnection({
   username: config.dbUser,
   password: config.dbPassWord,
   database: config.dbDatabase,
-  synchronize: true,
   entities: config.dbEntitiesPath,
-  logging: process.env.NODE_ENV == 'development',
+  synchronize:  __dev__,
+  logging:__dev__,
 })
   .then(async () => {
     const app = new Koa()
