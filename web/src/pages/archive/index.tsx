@@ -6,6 +6,7 @@ import { Row, Col, Card, Timeline } from 'antd'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import moment from 'moment'
 import React, { ReactElement } from 'react'
 import Sider from '@/components/sider'
 
@@ -37,7 +38,7 @@ export default function index({ articleData: res, tags }: Props): ReactElement {
                     <Link href="/post/:id" as={`/post/${v.id}`}>
                       <a>
                         <span className="mr">
-                          {(v.createdAt as string).slice(0, 10)}
+                          {moment(v.createdAt).format()}
                         </span>
                         <span>{v.title}</span>
                       </a>

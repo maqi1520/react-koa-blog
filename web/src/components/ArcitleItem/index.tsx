@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { Article } from '@/types'
 import { removeArticle } from '@/common/api'
 import Router from 'next/router'
+import moment from 'moment'
 import { Context, IContext } from '@/components/layout/LayoutProvider'
 
 export const IconText = ({ icon, text }: { icon: ReactElement; text: any }) => (
@@ -50,7 +51,11 @@ export const ArcitleItem = memo(({ item }: Props) => {
         ))}
       />
     ),
-    <IconText key="time" icon={<CalendarOutlined />} text={item.createdAt} />,
+    <IconText
+      key="time"
+      icon={<CalendarOutlined />}
+      text={moment(item.createdAt).fromNow()}
+    />,
     <IconText
       key="count"
       icon={<EyeOutlined />}

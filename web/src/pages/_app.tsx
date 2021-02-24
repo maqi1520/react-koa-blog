@@ -6,6 +6,11 @@ import LayoutProvider from '@/components/layout/LayoutProvider'
 import '@/styles/index.less'
 import '@/styles/globals.less'
 
+import moment from 'moment'
+import 'moment/locale/zh-cn'
+moment.locale('zh-cn')
+moment.defaultFormat = 'YYYY-MM-DD HH:mm'
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ConfigProvider locale={zhCN}>

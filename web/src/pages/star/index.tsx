@@ -6,6 +6,7 @@ import React, { ReactElement } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
+import moment from 'moment'
 import { BLOG_NAME } from '@/common/config'
 
 interface Props {
@@ -45,7 +46,7 @@ export default function Page({ starData: res }: Props): ReactElement {
         }}
         dataSource={res.data}
         renderItem={(item) => (
-          <List.Item key={item.id} extra={item.createdAt}>
+          <List.Item key={item.id} extra={moment(item.createdAt).format()}>
             <List.Item.Meta
               description={[
                 <a

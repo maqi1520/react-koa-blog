@@ -50,16 +50,16 @@ export class Comment {
   @Column({
     nullable: false,
     type: 'timestamp',
-    default:"CURRENT_TIMESTAMP",
+    default:()=>"CURRENT_TIMESTAMP"
   })
-  createdAt: string
+  createdAt: Date
 
   @Column({
-    nullable: false,
+    nullable: true,
     type: 'timestamp',
-    default: "CURRENT_TIMESTAMP",
+    onUpdate: 'CURRENT_TIMESTAMP',
   })
-  updatedAt: string
+  updatedAt: Date
 }
 
 export const commentSchema = {

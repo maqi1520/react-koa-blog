@@ -9,6 +9,7 @@ import Head from 'next/head'
 import { BLOG_NAME } from '@/common/config'
 import Comment from '@/components/comment'
 import Link from 'next/link'
+import moment from 'moment'
 import { Context, IContext } from '@/components/layout/LayoutProvider'
 import '@/styles/post.less'
 
@@ -70,7 +71,7 @@ export default function ArticleDetail({
   const extra = (
     <div className="content-extra">
       <CalendarOutlined style={{ marginRight: 8 }} />
-      {data?.createdAt}
+      {moment(data.createdAt).format()}
       <Divider type="vertical" />
       <EyeOutlined style={{ marginRight: 8, marginLeft: 8 }} />
       {data?.readedCount} 次预览
@@ -123,7 +124,7 @@ export default function ArticleDetail({
                       <div>{v.title}</div>
                       <div className="meta">
                         <CalendarOutlined style={{ marginRight: 5 }} />
-                        {v.createdAt}
+                        {moment(v.createdAt).fromNow()}
                         <Divider type="vertical" />
                         <EyeOutlined
                           style={{ marginRight: 5, marginLeft: 5 }}

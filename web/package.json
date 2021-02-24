@@ -19,6 +19,7 @@
     "codemirror": "^5.57.0",
     "lodash": "^4.17.20",
     "mdast-util-toc": "^5.0.3",
+    "moment": "^2.29.1",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
