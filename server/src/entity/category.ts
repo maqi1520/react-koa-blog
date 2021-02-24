@@ -1,6 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 import { IsNotEmpty } from 'class-validator'
-import moment from 'moment'
 
 @Entity()
 export class Category {
@@ -12,12 +11,16 @@ export class Category {
   name: string
 
   @Column({
-    default: moment().format('YYYY-MM-DD HH:mm'),
+    nullable: false,
+    type: 'timestamp',
+    default: "CURRENT_TIMESTAMP",
   })
   createdAt: string
 
   @Column({
-    default: moment().format('YYYY-MM-DD HH:mm'),
+    nullable: false,
+    type: 'timestamp',
+    default: "CURRENT_TIMESTAMP",
   })
   updatedAt: string
 }

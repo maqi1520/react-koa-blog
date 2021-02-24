@@ -9,7 +9,6 @@ import {
 } from 'typeorm'
 import { Length, IsEmail, IsUrl, ValidateIf } from 'class-validator'
 import { Article } from './article'
-import moment from 'moment'
 
 @Entity()
 @Tree('nested-set')
@@ -49,12 +48,16 @@ export class Comment {
   article: Article
 
   @Column({
-    default: moment().format('YYYY-MM-DD HH:mm'),
+    nullable: false,
+    type: 'timestamp',
+    default:"CURRENT_TIMESTAMP",
   })
   createdAt: string
 
   @Column({
-    default: moment().format('YYYY-MM-DD HH:mm'),
+    nullable: false,
+    type: 'timestamp',
+    default: "CURRENT_TIMESTAMP",
   })
   updatedAt: string
 }

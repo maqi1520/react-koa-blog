@@ -11,7 +11,6 @@ import { IsNotEmpty } from 'class-validator'
 import { User } from './user'
 import { Comment } from './comment'
 import { Category, CategorySchema } from './category'
-import moment from 'moment'
 
 @Entity()
 export class Article {
@@ -59,12 +58,16 @@ export class Article {
   userId: number
 
   @Column({
-    default: moment().format('YYYY-MM-DD HH:mm'),
+    nullable: false,
+    type: 'timestamp',
+    default:"CURRENT_TIMESTAMP",
   })
   createdAt: string
 
   @Column({
-    default: moment().format('YYYY-MM-DD HH:mm'),
+    nullable: false,
+    type: 'timestamp',
+    default:"CURRENT_TIMESTAMP",
   })
   updatedAt: string
 }
