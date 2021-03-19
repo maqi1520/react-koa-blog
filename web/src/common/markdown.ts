@@ -2,6 +2,8 @@ import remark from 'remark'
 import html from 'remark-html'
 import slug from 'remark-slug'
 import toc from 'mdast-util-toc'
+import normalize from 'mdurl/encode'
+import all from 'mdast-util-to-hast/lib/all'
 import highlight from 'remark-highlight.js'
 import low from 'lowlight/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
@@ -38,6 +40,18 @@ export function markdownToHtml(markdown: string) {
       .use(highlight)
       .use(html, {
         handlers: {
+          link: (h, node: any) => {
+            const props = {
+              title: undefined,
+              target: '_blank',
+              rel: 'nofollow',
+              href: normalize(node.url),
+            }
+            if (node.title !== null && node.title !== undefined) {
+              props.title = node.title
+            }
+            return h(node, 'a', props, all(h, node))
+          },
           code: (h, node) => ({
             type: 'element',
             tagName: 'pre',
