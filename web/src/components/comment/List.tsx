@@ -2,9 +2,9 @@ import React, { ReactElement } from 'react'
 import { map } from 'lodash'
 import { Comment as CommentItem } from '@/types'
 import { Comment, Tooltip, Avatar } from 'antd'
-import moment from 'moment'
-import 'moment/locale/zh-cn'
-moment.locale('zh-cn')
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+dayjs.locale('zh-cn')
 
 interface Props {
   data?: CommentItem[]
@@ -44,9 +44,9 @@ export default function List({ data, articleId, reply }: Props): ReactElement {
             content={<p>{item.text}</p>}
             datetime={
               <Tooltip
-                title={moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}
+                title={dayjs(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}
               >
-                <span>{moment(item.createdAt).fromNow()}</span>
+                <span>{dayjs(item.createdAt).fromNow()}</span>
               </Tooltip>
             }
           />

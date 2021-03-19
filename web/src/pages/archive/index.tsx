@@ -6,7 +6,7 @@ import { Row, Col, Card, Timeline } from 'antd'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import React, { ReactElement } from 'react'
 import Sider from '@/components/sider'
 
@@ -38,7 +38,7 @@ export default function index({ articleData: res, tags }: Props): ReactElement {
                     <Link href="/post/:id" as={`/post/${v.id}`}>
                       <a>
                         <span className="mr">
-                          {moment(v.createdAt).format()}
+                          {dayjs(v.createdAt).format('YYYY-MM-DD HH:mm:ss')}
                         </span>
                         <span>{v.title}</span>
                       </a>
