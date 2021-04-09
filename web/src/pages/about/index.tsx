@@ -18,25 +18,14 @@ class About extends Component {
           <p>纯函数式开发，很甜</p>
           <p>前端：next + typescript + antd + es6 + less + axios</p>
           <p>服务端：koa2 + mysql + typeorm</p>
-          <p className="code">源码戳这里</p>
           <p>
             <a
               target="_blank"
-              className="link"
+              className="code"
               rel="noreferrer noopener"
-              href="https://github.com/maqi1520/react-koa-blog/web"
+              href="https://github.com/maqi1520/react-koa-blog"
             >
-              web端
-            </a>
-          </p>
-          <p>
-            <a
-              target="_blank"
-              className="link"
-              rel="noreferrer noopener"
-              href="https://github.com/maqi1520/react-koa-blog/server"
-            >
-              node服务端
+              源码戳这里
             </a>
           </p>
           <Divider orientation="left">Me</Divider>
